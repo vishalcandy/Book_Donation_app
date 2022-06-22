@@ -1,6 +1,3 @@
-
-from ast import If
-from re import A
 from flask import Flask, render_template, request,redirect
 
 app = Flask(__name__)
@@ -25,11 +22,8 @@ def donationform():
             'address': x
         } 
         print (book)
-        
+
         return render_template('donationform.html')
-
-
-
 
 @app.route('/donationlist')
 def donationlist():

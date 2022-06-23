@@ -1,4 +1,7 @@
+from distutils.log import error
+import email
 from flask import Flask, render_template, request,redirect
+import csv
 
 app = Flask(__name__)
 
@@ -15,20 +18,31 @@ def donationform():
         A=request.form['number']
         h=request.form['book name']
         x=request.form['address']
-        book={
-            'email': g,
-            'number': A,
-            'book' : h,
-            'address': x
-        } 
-        print (book)
+        book=(g,A,h,x)
+        n= open('data.csv', 'a', newline='')
+        j= csv.writer(n)
+        j.writerow(book)
+        n.close()
+
 
         return render_template('donationform.html')
 
 
 @app.route('/donationlist')
 def donationlist():
-    return render_template('donationlist.html')
+    l=open('data.csv', 'r')
+    k=csv.reader(l)
+    books=[]
+    for bookdata in k:
+        book={
+            'email': bookdata[0],
+            'number': bookdata[1],
+            'book': bookdata[2],
+            'address': bookdata[3],
+        }
+        books.append(book)
+
+    return render_template('donationlist.html',book=books[0])
 
 e='admin username' 
 f='admin password'
@@ -44,7 +58,7 @@ def login():
            return redirect('/donationlist')
 
         else: 
-            return render_template('login.html')
+            return render_template('login.html', error='Incorrect username or password')
 
 
 if __name__ == '__main__':

@@ -25,6 +25,7 @@ def donationform():
 
         return render_template('donationform.html')
 
+
 @app.route('/donationlist')
 def donationlist():
     return render_template('donationlist.html')

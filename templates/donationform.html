@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='donationform.css') }}">
 </head>
 <body>
-    <h1>hi this is a donation form</h1>
+    <h1>Please fill this form to donate books</h1>
     <form action="/donationform" method="post">
         <input type="email" placeholder="email address" name="email" required>
         <input type="number" placeholder="Phone number" name="number" required>

@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    font-family: 'Comic Neue', cursive;;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh ;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    margin: 10px 0 10px 0;
+    border-radius: 3px;
+
+}
+button{
+    margin: 10px 0 10px 0;
+    background-color: rgba(72, 149, 237, 0.592);
+    color: white;
+    border: 1px solid black;
+    padding: 5px; 
+    border-radius: 2px;
+}
+#error{
+    color: red;
+    font-size: larger;
+}

@@ -1,6 +1,5 @@
-from distutils.log import error
-import email
-from flask import Flask, render_template, request,redirect
+
+from flask import Flask, render_template, request,redirect,url_for
 import csv
 
 app = Flask(__name__)
@@ -42,7 +41,7 @@ def donationlist():
         }
         books.append(book)
 
-    return render_template('donationlist.html',book=books[0])
+    return render_template('donationlist.html',bookslist=books)
 
 e='admin username' 
 f='admin password'

@@ -5,12 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 </head>
 <body>
-   <h1>hi heading</h1> 
-   <h1>hi heading</h1>
-   <p>hi sir</p>
-   <a href="/donationform"><button>donate books</button></a>
+    <div id="section1">
+        <h1>Book donation app</h1>
+        <a href="/donationform"><button id="b1">Donate now</button>
+        </a>
+    </div>
+    <div id="section2" >
+        <h2>why to donate your books</h2>
+        <p>Some description of why donating will help other kids who canot afford to purchase </p>
+        <ul>
+            <li>fact 1</li>
+            <li>fact 2</li>
+            <li>fact 3</li>
+        </ul>
+    </div>
+    <div id="section3">
+        <h2>what do we do with the donated books?</h2>
+        <p>we take those books and give it to some trustable NGO's.The NGO's donate the books to orphanages. </p>
+        <div id="imgslider">
+            <button id="previousbutton">&lt;</button>
+            <div>
+                <img src="{{ url_for('static', filename='images/booksimg1.jpeg') }}" id="img1" style="display:block;">
+                <img src="{{ url_for('static', filename='images/booksimg2.jpeg') }}" id="img2" style="display: none;">
+                <img src="{{ url_for('static', filename='images/download.jpeg') }}" id="img3" style="display: none;">
+            </div>
+            <button id="nextbutton">&gt;</button>
+        </div>
+        
+    </div>
 
+    <script src="{{ url_for('static', filename='home.js') }}"></script>
 </body>
 </html>

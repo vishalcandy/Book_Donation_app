@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='donationform.css') }}">
 </head>
 <body>
+    <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}"></a>
     <h1>Please fill this form to donate books</h1>
     <form action="/donationform" method="post">
         <input type="email" placeholder="email address" name="email" required>
@@ -19,6 +20,9 @@
         <textarea cols="20" rows="5" placeholder="address" name="address" required></textarea>
         <button type="submit">donate books</button>
     </form>
+    <div>
+
+    </div>
 
     
     

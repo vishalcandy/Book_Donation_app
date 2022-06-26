@@ -8,9 +8,13 @@ body{
     flex-direction: column;
     align-items: center;
     font-family: 'Comic Neue', cursive;;
+    background-color: #F1E1A6;
+    padding-top: 60px;
+    position: relative;
 }
 h1{
     text-align: center;
+    margin-top: 100px;
 }
 form{
     display: flex;
@@ -37,4 +41,11 @@ input,textarea{
 }
 input:focus-visible{
     border: 2px solid red;
+}
+img{
+    width: 20%;
+    height: auto;
+    position: fixed;
+    top: 10px;
+    left: 10px;
 }

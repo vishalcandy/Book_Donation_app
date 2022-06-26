@@ -8,15 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='donationlist.css') }}">
 </head>
 <body>
+    <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}"></a>
     <h1>this is a list of people who donated their books</h1>
     <table>
         <thead><tr>
-            <th>email</th>
-            <th>number</th>
-            <th>book name</th>
-            <th>address</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Book name</th>
+            <th>Address</th>
         </tr></thead>
         <tbody>
             {% for book in bookslist %}

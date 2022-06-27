@@ -14,6 +14,7 @@
     <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}"></a>
     <h1>Please fill this form to donate books</h1>
     <form action="/donationform" method="post">
+        <input type="text" placeholder="Name" name="name" required>
         <input type="email" placeholder="email address" name="email" required>
         <input type="number" placeholder="Phone number" name="number" required>
         <input type="text" placeholder="book name" name="book name" required> 

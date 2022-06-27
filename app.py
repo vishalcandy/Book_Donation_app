@@ -1,4 +1,5 @@
 
+from traceback import print_stack
 from flask import Flask, render_template, request,redirect,url_for
 import csv
 
@@ -13,11 +14,12 @@ def donationform():
     if request.method == 'GET':
         return render_template('donationform.html')
     elif request.method == 'POST':
+        b=request.form['name']
         g=request.form['email']
         A=request.form['number']
         h=request.form['book name']
         x=request.form['address']
-        book=(g,A,h,x)
+        book=(b,g,A,h,x)
         n= open('data.csv', 'a', newline='')
         j= csv.writer(n)
         j.writerow(book)
@@ -32,14 +34,18 @@ def donationlist():
     l=open('data.csv', 'r')
     k=csv.reader(l)
     books=[]
-    for bookdata in k:
-        book={
-            'email': bookdata[0],
-            'number': bookdata[1],
-            'book': bookdata[2],
-            'address': bookdata[3],
-        }
-        books.append(book)
+    try:
+        for bookdata in k:
+            book={
+                'name':bookdata[0],
+                'email': bookdata[1],
+                'number': bookdata[2],
+                'book': bookdata[3],
+                'address': bookdata[4],
+            }
+            books.append(book)
+    except:
+        return render_template('donationlist.html')
 
     return render_template('donationlist.html',bookslist=books)
 

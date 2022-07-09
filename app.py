@@ -1,5 +1,3 @@
-
-from traceback import print_stack
 from flask import Flask, render_template, request,redirect,url_for
 import csv
 
@@ -7,7 +5,60 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    return render_template('home.html')
+    l=open('data.csv', 'r')
+    k=csv.reader(l)
+    bookdata=[]
+    try:
+        for currentbook in k:
+            book={
+                'name':currentbook[0],
+                'email': currentbook[1],
+                'number': currentbook[2],
+                'book': currentbook[3],
+                'address': currentbook[4],
+            }
+            bookdata.append(book)
+    except:
+        return render_template('donationlist.html')
+    l.close()
+    totalBooks = {}
+    print(bookdata)
+    for book in bookdata:
+        try:
+            useremail = book['email']
+            currentBookCount = totalBooks[useremail]
+            totalBooks[useremail] = currentBookCount + 1
+        except:
+            useremail = book['email']
+            totalBooks[useremail] = 1
+
+   
+
+    for book in bookdata:
+        try:
+            useremail = book['email']
+            username = book['name']
+            totalBookCount = totalBooks[useremail]
+            totalBooks[username] = totalBookCount
+            del totalBooks[useremail]
+        except:
+            continue
+
+
+   
+    marklist = sorted(totalBooks.items(), key=lambda x:x[1])
+    sortdict = dict(marklist)
+    totalBooksInAscOrder = list(sortdict.items())
+
+  
+    topDonorsList = []
+    for item in totalBooksInAscOrder:
+        topDonorsList.insert(0, item)
+
+    
+
+    
+    return render_template('home.html',topdonorslist=topDonorsList)
 
 @app.route('/donationform', methods=['GET','POST'])
 def donationform():
@@ -46,6 +97,7 @@ def donationlist():
             books.append(book)
     except:
         return render_template('donationlist.html')
+    l.close()
 
     return render_template('donationlist.html',bookslist=books)
 

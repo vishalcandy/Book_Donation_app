@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request,redirect,url_for
+from flask import Flask, render_template, request,redirect,url_for,send_from_directory
 import csv
 
 app = Flask(__name__)
@@ -116,6 +116,16 @@ def login():
 
         else: 
             return render_template('login.html', error='Incorrect username or password')
+
+# @app.route('/manifest.json')
+# def manifest():
+#     return send_from_directory('static', 'manifest.json')
+
+# @app.route('/sw.js')
+# def sw():
+#     return send_from_directory('static', 'sw.js')
+
+    
 
 
 if __name__ == '__main__':

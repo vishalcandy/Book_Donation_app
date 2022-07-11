@@ -117,16 +117,13 @@ def login():
         else: 
             return render_template('login.html', error='Incorrect username or password')
 
-# @app.route('/manifest.json')
-# def manifest():
-#     return send_from_directory('static', 'manifest.json')
 
-# @app.route('/sw.js')
-# def sw():
-#     return send_from_directory('static', 'sw.js')
+@app.route('/sw.js')
+def sw():
+    return send_from_directory('static', 'sw.js')
 
     
 
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(debug=True ,port=8080,use_reloader=False)

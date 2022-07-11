@@ -1,9 +1,12 @@
 const cacheName = 'chat'
 const staticAssets = [
-    './home.html',
-    './donationform.html',
-    './donationlist.html',
-    './login.html'
+  '/',
+  '/static/home.css',
+  '/static/donationlist.css',
+  '/static/donationform.css',
+  '/static/login.css',
+  '/static/home.js',
+  '/static/index.js'
 ]
 
 // Installing service worker

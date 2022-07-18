@@ -1,3 +1,4 @@
+from xmlrpc.client import _HostType
 from flask import Flask, render_template, request,redirect,url_for,send_from_directory
 import csv
 
@@ -126,4 +127,4 @@ def sw():
 
 
 if __name__ == '__main__':
-  app.run(debug=True,host='192.168.0.105')
+  app.run(debug=True,_Host='192.168.0.105')

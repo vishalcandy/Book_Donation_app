@@ -124,6 +124,8 @@ def sw():
 
     
 
-
+#if __name__ == '__main__':
+  #app.run(debug=True,Host='192.168.3.11')
+ 
 if __name__ == '__main__':
-  app.run(debug=True,Host='192.168.0.105')
+  app.run(debug=True)

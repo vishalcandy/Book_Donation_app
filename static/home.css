@@ -16,6 +16,11 @@ body{
 
  }
 
+ #b1{
+    border: black;
+    margin-top: 2px;
+ }
+
 
 #section2{
     height: 100vh;

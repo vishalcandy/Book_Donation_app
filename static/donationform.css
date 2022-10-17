@@ -11,6 +11,8 @@ body{
     background-color: #F1E1A6;
     padding-top: 60px;
     position: relative;
+    background-image: url('images/Imgland8.webp');
+    background-size: cover;
 }
 h1{
     text-align: center;

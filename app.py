@@ -122,6 +122,64 @@ def login():
 def sw():
     return send_from_directory('static', 'sw.js')
 
+@app.route('/aboutme')
+def aboutme():
+    l=open('data.csv', 'r')
+    k=csv.reader(l)
+    books=[]
+    try:
+        for bookdata in k:
+            book={
+                'name':bookdata[0],
+                'email': bookdata[1],
+                'number': bookdata[2],
+                'book': bookdata[3],
+                'address': bookdata[4],
+            }
+            books.append(book)
+    except:
+        return render_template('aboutme.html')
+    l.close()
+
+    return render_template('aboutme.html',bookslist=books)
+
+e='admin username' 
+f='admin password'
+
+@app.route('/topdonors')
+def topdonors():
+    l=open('data.csv', 'r')
+    k=csv.reader(l)
+    books=[]
+    try:
+        for bookdata in k:
+            book={
+                'name':bookdata[0],
+                'email': bookdata[1],
+                'number': bookdata[2],
+                'book': bookdata[3],
+                'address': bookdata[4],
+            }
+            books.append(book)
+    except:
+        return render_template('topdonors.html')
+    
+    topDonorsList = []
+    for item in totalBooksInAscOrder:
+        topDonorsList.insert(0, item)
+
+    
+
+    
+    return render_template('topdonors.html',topdonorslist=topDonorsList)
+    l.close()
+
+    return render_template('topdonors.html',bookslist=books)
+
+e='admin username' 
+f='admin password'
+
+
     
 
 #if __name__ == '__main__':

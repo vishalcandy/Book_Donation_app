@@ -25,50 +25,10 @@
         </a>
     </div>
     <div id="section2" >
-        <h2>why to donate your old books</h2>
-        <p>..</p>
-        <ul>
-            <li>fact 1</li>
-            <li>fact 2</li>
-            <li>fact 3</li>
-            <a href="aboutme"><Button >About Us</Button></a>
-            <a href="topdonors"><button>Top Donors</button></a>
-        </ul>
-    </div>
-    <div id="section3">
-        <h2>what do we do with the donated books?</h2>
-        <p>we take those books and give it to some trustable NGO's.The NGO's donate the books to trusted orphanages. </p>
-        <div id="imgslider">
-            <button id="previousbutton" class="arrowbutton">&lt;</button>
-            <div>
-                <img src="{{ url_for('static', filename='images/booksimg1.jpeg') }}" id="img1" style="display:block;">
-                <img src="{{ url_for('static', filename='images/booksimg2.jpeg') }}" id="img2" style="display: none;">
-                <img src="{{ url_for('static', filename='images/download.jpeg') }}" id="img3" style="display: none;">
-            </div>
-            <button id="nextbutton" class="arrowbutton">&gt; </button>
-        </div>
+        <a href="aboutme"><button class="testButton1"><img src="{{ url_for('static', filename='images/imgland5.jpeg') }}" alt="">About Us</button></a>
         
+        <a href="topdonors"><button class="testButton2"><img src="{{ url_for('static', filename='images/topdonors.jpg') }}" alt="">Top Donor</button></a>    
     </div>
-    <div id="section4">
-        <h2>top donors</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name of the donor</th>
-                    <th>Total books donated</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for donor in topdonorslist %}
-                <tr>
-                    <td>{{donor[0]}}</td>
-                    <td>{{donor[1]}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-
     <script src="{{ url_for('static', filename='home.js') }}"></script>
     <script src="{{ url_for('static', filename='index.js') }}"></script>
 </body>

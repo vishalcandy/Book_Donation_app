@@ -38,12 +38,11 @@ body{
     height: 100vh;
     width: 100vw;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row ;
     align-items: center;
     background-color: #CED89E;
-    background-image: url('images/Imgland6.jpeg');
-    background-size: cover;
+    align-items: center;
+
 }
 #b1{
     background-color: #B09B71;
@@ -53,27 +52,8 @@ body{
     width: 170px;
     cursor: pointer;
 }
-#section3{
-    height: 100vh;
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #A0BCC2;
-    padding: 20px;
-   
 
-}
-#imgslider{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    column-gap: 25px;
 
-}
 #logo{
     width: 15%;
     height: auto;
@@ -81,66 +61,33 @@ body{
     top: 10px;
     left: 10px;
 }
-.arrowbutton{
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
-    font-family: monospace;
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    color: white;
-}
-.arrowbutton:hover{
-background-color: #CDBE78;
-}
-#img1,#img2,#img3{
-    width: 550px;
-
-}
-#section4{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #B2C8DF;
-    font-family: 'Roboto Slab', serif;
-    background-image: url('images/Imgland3.jpeg');
-    background-size: cover;
-
-}
-table{
-    border-spacing: 0;
-    border: 1px solid black;
-    border-collapse: collapse; 
-}
-td{
-    padding-bottom: 10px;
-    padding-right: 10px;
-    width: 300px;
-    border:1px solid black;
-
-    
+.testButton1
+{
+font-size:100%;
+text-align: center ;
+align-self: auto;
+height: 50%;
+width: 50%;
+align-items: center;
+position: relative;
+margin-left: 150px;
+padding-left: 150px;
 }
 
-th{
-    padding-bottom: 10px;
-    text-align: left;
-    font-weight: bold;
-    padding-right: 10px;
-    width: 300px;
-    border:1px solid black;
+.testButton2
+{
+font-size:100%;
+text-align: center;
+height: 50%;
+width: 50%;
+position: relative;
+margin-left: 150px;
+padding-left: 150px;
+
 }
 
-td:last-child{
-    width: 100px;
-}
-th:last-child{
-    width: 100px;
-}
+
+
 
 @media (max-width:699px) {
     #logo{

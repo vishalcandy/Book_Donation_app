@@ -10,3 +10,48 @@
     background-image: url('images/Imgland3.jpeg');
     background-size: cover;
 }
+#logo{
+    width: 15%;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+table{
+    border-spacing: 0;
+    border: 1px solid black;
+    border-collapse: collapse; 
+}
+td{
+    padding-bottom: 10px;
+    padding-right: 10px;
+    width: 300px;
+    border:1px solid black;
+
+    
+}
+
+th{
+    padding-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+    padding-right: 10px;
+    width: 300px;
+    border:1px solid black;
+}
+
+td:last-child{
+    width: 100px;
+}
+th:last-child{
+    width: 100px;
+}
+
+@media (max-width:699px) {
+    #logo{
+        width: 50%;
+    }
+    #img1,#img2,#img3{
+        width: 100%;
+    }
+}

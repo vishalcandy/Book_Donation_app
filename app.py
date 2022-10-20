@@ -163,21 +163,13 @@ def topdonors():
             books.append(book)
     except:
         return render_template('topdonors.html')
-    
-    topDonorsList = []
-    for item in totalBooksInAscOrder:
-        topDonorsList.insert(0, item)
-
-    
-
-    
-    return render_template('topdonors.html',topdonorslist=topDonorsList)
     l.close()
 
     return render_template('topdonors.html',bookslist=books)
 
 e='admin username' 
 f='admin password'
+
 
 
     

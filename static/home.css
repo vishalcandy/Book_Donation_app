@@ -40,7 +40,7 @@ body{
     display: flex;
     flex-direction: row ;
     align-items: center;
-    background-color: #CED89E;
+    background-color: #EDE4E0;
     align-items: center;
 
 }
@@ -72,6 +72,7 @@ align-items: center;
 position: relative;
 margin-left: 150px;
 padding-left: 150px;
+cursor: pointer;
 }
 
 .testButton2
@@ -83,7 +84,51 @@ width: 50%;
 position: relative;
 margin-left: 150px;
 padding-left: 150px;
+cursor: pointer;
 
+}
+
+#section4{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #B2C8DF;
+    font-family: 'Roboto Slab', serif;
+    background-image: url('images/Imgland3.jpeg');
+    background-size: cover;
+}
+
+table{
+    border-spacing: 0;
+    border: 1px solid black;
+    border-collapse: collapse; 
+}
+td{
+    padding-bottom: 10px;
+    padding-right: 10px;
+    width: 300px;
+    border:1px solid black;
+
+    
+}
+
+th{
+    padding-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+    padding-right: 10px;
+    width: 300px;
+    border:1px solid black;
+}
+
+td:last-child{
+    width: 100px;
+}
+th:last-child{
+    width: 100px;
 }
 
 
@@ -97,3 +142,4 @@ padding-left: 150px;
         width: 100%;
     }
 }
+

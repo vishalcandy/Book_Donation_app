@@ -24,12 +24,35 @@
         <a href="/donationform"><button id="b1">Donate now</button>
         </a>
     </div>
+    
+    <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" id="logo"></a>
+    <div id="section4">
+        <h2>Top Donors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name of the donor</th>
+                    <th>Total books donated</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for donor in topdonorslist %}
+                <tr>
+                    <td>{{donor[0]}}</td>
+                    <td>{{donor[1]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
     <div id="section2" >
         <a href="aboutme"><button class="testButton1"><img src="{{ url_for('static', filename='images/imgland5.jpeg') }}" alt="">About Us</button></a>
         
-        <a href="topdonors"><button class="testButton2"><img src="{{ url_for('static', filename='images/topdonors.jpg') }}" alt="">Top Donor</button></a>    
     </div>
+    
+
     <script src="{{ url_for('static', filename='home.js') }}"></script>
     <script src="{{ url_for('static', filename='index.js') }}"></script>
+
 </body>
 </html>
